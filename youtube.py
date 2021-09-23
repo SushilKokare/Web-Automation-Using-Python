@@ -13,7 +13,7 @@ class Music():
 
     
     def play(self):
-        #name=input("Enter a youtube channel name : ")
+        #name=input("Enter a youtube channel name : ") 
         self.driver.get('https://www.youtube.com/c/MumbikerNikhil/videos')
 
        # new=self.driver.find_element_by_xpath('//*[@id="thumbnail"]')
