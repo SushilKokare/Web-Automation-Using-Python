@@ -11,9 +11,11 @@ content=driver.page_source
 soup=BeautifulSoup(content,features="html5lib")
 
 for a in soup.findAll('h3',attrs={'class': 'Lister-item-mode-advanced'}):
-    name.append(str(h3.text).strip())
+    name.append(str(a.text).strip())
 
-for i in name:
-    print("\n"+i)
+for b in soup.findAll('div',attrs={'class': 'inline-block ratings-imdb-rating'}):
+    ratings.append(str(b.text).strip())
+df=pd.DataFrame({'Product Name': name, 'Ratings': ratings})
+df.to_csv('products.csv',index=True,encoding='utf-8')
 
 
